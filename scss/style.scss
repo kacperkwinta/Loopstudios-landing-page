@@ -91,11 +91,15 @@ $box-shadow-1: hsla(0, 0%, 0%, 0.2) 0px 7px 29px 0px;
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+
+	@include respond(phone) {
+		font-size: 50%;
+	}
 }
 
 body {
 	font-size: 1.5rem;
-	font-family: "Alata", sans-serif;
+	// font-family: "Alata", sans-serif;
 	font-family: "Josefin Sans", sans-serif;
 }
 
@@ -113,6 +117,11 @@ header {
 	@include respond(tab-port) {
 		padding: 22rem 6.4rem;
 	}
+
+	@include respond(phone) {
+		padding: 36rem 2.4rem;
+		background-image: url("../images/mobile/image-hero.jpg");
+	}
 }
 
 /////////////////////////////////////
@@ -125,8 +134,8 @@ nav {
 	right: 0;
 	padding: 4.8rem 12.6rem;
 	font-family: "Alata", sans-serif;
-	border: 3px solid red;
 	z-index: 100;
+	background-color: hsla(0, 0%, 0%, 0.4);
 
 	@include flex(space-between, center, 0);
 	flex-wrap: wrap;
@@ -200,6 +209,7 @@ nav {
 /////////////////////////////////////
 nav.mobile-nav {
 	@include respond(tab-port) {
+		transition: background-color 0.3s ease;
 		bottom: 0;
 		background-color: $color-primary-2;
 		align-items: flex-start;
@@ -235,22 +245,139 @@ nav.mobile-nav {
 /// TYPOGRAPHY
 /////////////////////////////////////
 h1 {
-	font-family: "Josefin Sans", sans-serif;
-	text-transform: uppercase;
 	font-size: 5.2rem;
 	max-width: 16ch;
 	color: $color-primary-1;
 	letter-spacing: 4px;
 	padding: 3.2rem;
 	border: 2px solid $color-primary-1;
-	font-weight: 300;
 	position: absolute;
 	left: 12.6rem;
 	top: 50%;
 	transform: translateY(-50%);
 
 	@include respond(tab-port) {
-		left: 4.8rem;
+		left: 6.4rem;
+	}
+
+	@include respond(phone) {
+		position: static;
+		margin: 0 auto;
+		width: 90%;
+	}
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Josefin Sans", sans-serif;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+
+/////////////////////////////////////
+/// SECTIONS
+/////////////////////////////////////
+section {
+	padding: 9.6rem 12.6rem;
+
+	@include respond(tab-port) {
+		padding: 6.4rem;
+	}
+}
+
+.section-interactive {
+	@include flex(center, flex-end, 0);
+
+	.text-box {
+		background-color: $color-primary-1;
+		margin-left: -12vw;
+		max-width: 56rem;
+		padding: 6.4rem 6.4rem 0 6.4rem;
+		@include flex(center, flex-start, 3.2rem);
+		flex-direction: column;
+
+		h2 {
+			font-size: 4rem;
+			letter-spacing: 3px;
+			line-height: 1.4;
+		}
+
+		p {
+			font-family: "Alata", sans-serif;
+			color: $color-primary-3;
+			line-height: 1.5;
+		}
+	}
+}
+
+.section-creations {
+	.container {
+		@include flex(space-between, center, 3.2rem);
+		flex-wrap: wrap;
+
+		.item {
+			position: relative;
+			height: 42rem;
+			width: 22%;
+			padding: 2.4rem;
+			@include flex(flex-start, flex-end, 0);
+			background-size: cover !important;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 33%;
+				background: linear-gradient(
+					180deg,
+					transparent 1%,
+					rgba(0, 0, 0, 0.6) 100%
+				);
+			}
+
+			h3 {
+				color: $color-primary-1;
+				font-size: 2.8rem;
+				max-width: 1ch;
+				z-index: 50;
+			}
+		}
+
+		.item:nth-child(1) {
+			background-image: url(../images/desktop/image-deep-earth.jpg);
+		}
+
+		.item:nth-child(2) {
+			background-image: url(../images/desktop/image-night-arcade.jpg);
+		}
+
+		.item:nth-child(3) {
+			background-image: url(../images/desktop/image-soccer-team.jpg);
+		}
+
+		.item:nth-child(4) {
+			background-image: url(../images/desktop/image-grid.jpg);
+		}
+
+		.item:nth-child(5) {
+			background-image: url(../images/desktop/image-from-above.jpg);
+		}
+
+		.item:nth-child(6) {
+			background-image: url(../images/desktop/image-pocket-borealis.jpg);
+		}
+
+		.item:nth-child(7) {
+			background-image: url(../images/desktop/image-curiosity.jpg);
+		}
+
+		.item:nth-child(8) {
+			background-image: url(../images/desktop/image-fisheye.jpg);
+		}
 	}
 }
 
