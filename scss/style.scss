@@ -146,6 +146,7 @@ nav {
 
 	img {
 		order: -1;
+		width: 16rem;
 	}
 
 	ul {
@@ -190,6 +191,11 @@ nav {
 		border: none;
 		border-radius: none;
 		background: transparent;
+
+		img {
+			max-height: 2.4rem;
+			width: min-content;
+		}
 
 		@include flex(center, center, 0);
 		order: 1 !important;
@@ -365,6 +371,7 @@ section {
 			border: 1px solid $color-primary-2;
 			font-family: "Alata", sans-serif;
 			text-transform: uppercase;
+			color: $color-primary-2;
 			letter-spacing: 3px;
 			text-decoration: none;
 

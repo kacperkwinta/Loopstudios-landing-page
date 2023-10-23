@@ -12,3 +12,15 @@ function toggleIconMenu() {
 
 menuHamburger.addEventListener("click", toggleIconMenu);
 menuClose.addEventListener("click", toggleIconMenu);
+
+const menuLinks = document.querySelectorAll("nav ul li a");
+
+function hideMenu() {
+	nav.classList.remove("mobile-nav");
+	menuClose.classList.add("hidden");
+	menuHamburger.classList.remove("hidden");
+}
+
+menuLinks.forEach((link) => {
+	link.addEventListener("click", hideMenu);
+});
