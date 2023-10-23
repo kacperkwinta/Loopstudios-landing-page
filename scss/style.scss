@@ -108,7 +108,7 @@ body {
 /////////////////////////////////////
 header {
 	position: relative;
-	height: 90vh;
+	height: 80vh;
 	background-color: rgba(0, 0, 0, 0.3);
 	background-blend-mode: darken;
 	background-image: url("../images/desktop/image-hero.jpg");
@@ -261,6 +261,7 @@ h1 {
 	left: 12.6rem;
 	top: 50%;
 	transform: translateY(-50%);
+	margin-top: 6rem;
 
 	@include respond(tab-port) {
 		left: 6.4rem;
@@ -271,6 +272,7 @@ h1 {
 		margin: 0 auto;
 		width: 90%;
 		font-size: 4.2rem;
+		margin-top: 3rem;
 	}
 
 	@include respond(phone-s) {
